@@ -1,34 +1,16 @@
 'use strict';
 
-// ╔══════════════════════════════════════════════════════════════════════╗
-// ║          🌸 KANZANBOT v2 — PLANTILLA DE PLUGIN (example.js) 🌸      ║
-// ║                                                                      ║
-// ║  Copia este archivo, renómbralo y edítalo para crear tu comando.     ║
-// ║  Colócalo en la carpeta plugins/ y usa !reload para activarlo.       ║
-// ╚══════════════════════════════════════════════════════════════════════╝
-
-// ── Imports disponibles ───────────────────────────────────────────────
 const fs   = require('fs');
 const path = require('path');
-// const axios = require('axios');  // Para peticiones HTTP
-// const { translateText } = require('../lib/translate');  // Traductor manual
+const axios = require('axios');  // Para peticiones HTTP
+const { translateText } = require('../lib/translate');  // Traductor manual
 
 module.exports = {
-  // ════════════════════════════════════════════════════════════════════
-  //   CONFIGURACIÓN DEL PLUGIN
-  // ════════════════════════════════════════════════════════════════════
-
-  // Lista de comandos que activan este plugin
   // El primero es el principal (aparece en !menu)
   commands: ['ejemplo', 'example', 'test'],
-
-  // Descripción que aparece en el menú
   description: 'Plantilla de ejemplo con todos los tipos de envío',
-
   // Categoría del menú: 'grupo' | 'owner' | 'utilidades' | 'general' | 'info' | 'serbot'
   category: 'general',
-
-  // ── Restricciones (todas opcionales, default: false) ─────────────
   ownerOnly  : false,  // Solo owner del bot
   rownOnly   : false,  // Solo rowner (propietario real)
   adminOnly  : false,  // Solo admins del grupo
@@ -37,10 +19,6 @@ module.exports = {
   premiumOnly: false,  // Solo usuarios premium
   botAdmin   : false,  // El bot debe ser admin del grupo
   restrict   : false,  // Bloqueado cuando !restrict está activo
-
-  // ════════════════════════════════════════════════════════════════════
-  //   FUNCIÓN PRINCIPAL
-  // ════════════════════════════════════════════════════════════════════
 
   async execute(ctx) {
     // ── Variables del contexto disponibles ─────────────────────────
@@ -83,14 +61,8 @@ module.exports = {
 
     const texto = args.join(' ').trim();
 
-    // ════════════════════════════════════════════════════════════════
-    //   EJEMPLOS DE USO — borra los que no necesites
-    // ════════════════════════════════════════════════════════════════
-
     // ── 1. Respuesta de texto simple ─────────────────────────────
-    // reply() usa await tr() internamente para resolver Promises
     if (command === 'ejemplo') {
-      // Traducción automática: tr() traduce al idioma del usuario
       const saludo = await tr('success'); // clave de es.json
       return reply(`*[🌸] Hola ${pushName}!*\n\n${saludo}`);
     }
@@ -98,64 +70,39 @@ module.exports = {
     // ── 2. Texto con mención ──────────────────────────────────────
     if (command === 'example') {
       const num = sender.split('@')[0];
-      return sock.sendMessage(remoteJid, {
-        text    : `*[👋] Hola @${num}, bienvenido!*`,
-        mentions: [sender],  // OBLIGATORIO para que WA renderice el @tag
-      }, { quoted: msg });
+      return sock.sendMessage(remoteJid, {text    : `*[👋] Hola @${num}, bienvenido!*`, mentions: [sender] }, { quoted: msg });
     }
 
     // ── 3. Imagen desde URL ───────────────────────────────────────
     if (command === 'test' && args[0] === 'imagen') {
-      return sock.sendMessage(remoteJid, {
-        image  : { url: 'https://picsum.photos/800/600' },
-        caption: `*[📷] Imagen de ejemplo*\n_Enviada por KanzanBot 🌸_`,
-      }, { quoted: msg });
+      return sock.sendMessage(remoteJid, { image  : { url: 'https://picsum.photos/800/600' }, caption: `*[📷] Imagen de ejemplo*\n_Enviada por KanzanBot 🌸_` }, { quoted: msg });
     }
 
     // ── 4. Imagen desde archivo local (en src/) ───────────────────
     if (command === 'test' && args[0] === 'local') {
       const imgPath = path.join(process.cwd(), 'src', 'menu.jpg');
       if (!fs.existsSync(imgPath)) return reply('*[❌] Imagen no encontrada en src/menu.jpg*');
-      return sock.sendMessage(remoteJid, {
-        image  : fs.readFileSync(imgPath),
-        caption: '*[📷] Imagen local*',
-      }, { quoted: msg });
+      return sock.sendMessage(remoteJid, { image  : fs.readFileSync(imgPath), caption: '*[📷] Imagen local*' }, { quoted: msg });
     }
 
     // ── 5. Video desde URL ────────────────────────────────────────
     if (command === 'test' && args[0] === 'video') {
-      return sock.sendMessage(remoteJid, {
-        video   : { url: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-        caption : '*[🎥] Video de ejemplo*',
-        mimetype: 'video/mp4',
-      }, { quoted: msg });
+      return sock.sendMessage(remoteJid, { video   : { url: 'https://www.w3schools.com/html/mov_bbb.mp4' }, caption : '*[🎥] Video de ejemplo*', mimetype: 'video/mp4' }, { quoted: msg });
     }
 
     // ── 6. Audio (nota de voz) ────────────────────────────────────
     if (command === 'test' && args[0] === 'audio') {
-      return sock.sendMessage(remoteJid, {
-        audio   : { url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' },
-        mimetype: 'audio/mpeg',
-        ptt     : false,  // true = nota de voz (círculo), false = reproductor normal
-      }, { quoted: msg });
+      return sock.sendMessage(remoteJid, { audio : { url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' }, mimetype: 'audio/mpeg', ptt : false }, { quoted: msg }); 
     }
 
     // ── 7. Sticker desde URL ──────────────────────────────────────
-    // Requiere que la imagen sea cuadrada y <500KB para WA
     if (command === 'test' && args[0] === 'sticker') {
-      return sock.sendMessage(remoteJid, {
-        sticker: { url: 'https://picsum.photos/512/512' },
-      }, { quoted: msg });
+      return sock.sendMessage(remoteJid, { sticker: { url: 'https://picsum.photos/512/512' } }, { quoted: msg });
     }
 
     // ── 8. Documento (PDF, ZIP, etc.) ─────────────────────────────
     if (command === 'test' && args[0] === 'doc') {
-      return sock.sendMessage(remoteJid, {
-        document: { url: 'https://www.w3.org/WAI/WCAG21/wcag-2.1.pdf' },
-        mimetype: 'application/pdf',
-        fileName: 'ejemplo.pdf',
-        caption : '*[📄] Documento de ejemplo*',
-      }, { quoted: msg });
+      return sock.sendMessage(remoteJid, { document: { url: 'https://www.w3.org/WAI/WCAG21/wcag-2.1.pdf' }, mimetype: 'application/pdf', fileName: 'ejemplo.pdf', caption : '*[📄] Documento de ejemplo*' }, { quoted: msg });
     }
 
     // ── 9. Mensaje con botones (solo funciona en chat privado en WA) ──
