@@ -1,7 +1,7 @@
 'use strict';
 
 // ╔══════════════════════════════════════════════════════════════════════╗
-// ║        🌸 KANZANBOT v2 — PLUGIN: PLAY (Música y Video) 🌸           ║
+// ║        💨 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵 v2 — PLUGIN: PLAY (Música y Video) 💨           ║
 // ║                                                                      ║
 // ║  !play  → Audio MP3  → api.mp3youtube.cc → ffmpeg MP4→MP3           ║
 // ║  !play2 → Video MP4  → api.mp3youtube.cc → ffmpeg repair faststart  ║
@@ -237,8 +237,8 @@ function convertToMP3(inputPath, outputPath, meta = {}) {
 
     // Sanitizar: quitar caracteres que ffmpeg interpreta como separadores
     const sanitize = s => (s || '').replace(/[:"\\]/g, '').trim();
-    const title  = sanitize(meta.title)  || 'KanzanBot';
-    const artist = sanitize(meta.artist) || 'KanzanBot';
+    const title  = sanitize(meta.title)  || '𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵';
+    const artist = sanitize(meta.artist) || '𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵';
 
     ffmpeg(inputPath)
       .noVideo()
@@ -367,7 +367,7 @@ module.exports = {
           `🎥 *${ytTitle}*\n` +
           (ytAuthor   ? `👤 _${ytAuthor}_\n`   : '') +
           (ytDuration ? `⏱️ _${ytDuration}_\n` : '') +
-          `📦 _${sizeMB} MB_\n\n_🌸 KanzanBot_`;
+          `📦 _${sizeMB} MB_\n\n_💨 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵_`;
 
         if (buf.length > WA_MEDIA_LIMIT) {
           // Supera 16 MB → enviar como documento
@@ -394,7 +394,7 @@ module.exports = {
         tmpFiles.push(rawFile, outMp3);
 
         await downloadFile(dlUrl, rawFile);
-        await convertToMP3(rawFile, outMp3, { title: ytTitle, artist: ytAuthor || 'KanzanBot' });
+        await convertToMP3(rawFile, outMp3, { title: ytTitle, artist: ytAuthor || '𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵' });
 
         const buf    = fs.readFileSync(outMp3);
         const sizeMB = (buf.length / 1024 / 1024).toFixed(2);
@@ -404,7 +404,7 @@ module.exports = {
           `🎵 *${ytTitle}*\n` +
           (ytAuthor   ? `👤 _${ytAuthor}_\n`   : '') +
           (ytDuration ? `⏱️ _${ytDuration}_\n` : '') +
-          `📦 _${sizeMB} MB_\n\n_🌸 KanzanBot_`;
+          `📦 _${sizeMB} MB_\n\n_💨 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵_`;
 
         if (buf.length > WA_MEDIA_LIMIT) {
           await sock.sendMessage(remoteJid, {

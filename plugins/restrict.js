@@ -1,7 +1,7 @@
 'use strict';
 
 // ╔══════════════════════════════════════════════════════════════════════╗
-// ║            🌸 KANZANBOT v2 — PLUGIN: RESTRICT 🌸                    ║
+// ║            💨 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵 v2 — PLUGIN: RESTRICT 💨                    ║
 // ║                                                                      ║
 // ║  Activa / desactiva comandos "peligrosos" marcados con              ║
 // ║  restrict:true en sus plugins.                                       ║

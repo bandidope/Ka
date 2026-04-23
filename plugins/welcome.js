@@ -1,7 +1,7 @@
 'use strict';
 
 // ╔══════════════════════════════════════════════════════════════════════╗
-// ║           🌸 KANZANBOT v2 — PLUGIN: WELCOME / BYE 🌸               ║
+// ║           💨 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵 v2 — PLUGIN: WELCOME / BYE 💨               ║
 // ╚══════════════════════════════════════════════════════════════════════╝
 
 const fs   = require('fs');
@@ -17,7 +17,7 @@ const {
 // ── Mensajes de bienvenida (base en español) ──────────────────────────
 const WELCOME_MSGS = [
   '¡El grupo se alegra de tenerte aquí! 🎉',
-  'Bienvenido/a, esperamos que disfrutes tu estadía. 🌸',
+  'Bienvenido/a, esperamos que disfrutes tu estadía. 💨',
   '¡Por fin llegas! El grupo ya puede funcionar correctamente. 😄',
   '¡Bienvenido/a! Las reglas existen… aunque nadie las lea. 📜',
   'Llegó alguien nuevo. El promedio de productividad sigue igual. 😂',
@@ -149,7 +149,7 @@ module.exports = {
     if (!sub || !['on', 'off', 'activar', 'desactivar'].includes(sub)) {
       const current = await db.getGroupField(remoteJid, field);
       return reply(
-        `*[🌸] Mensaje de ${label}*\n\n` +
+        `*[💨] Mensaje de ${label}*\n\n` +
         `Estado: ${current ? '✅ *Activado*' : '❌ *Desactivado*'}\n\n` +
         `▸ \`${prefix}${command} on\` — Activar\n` +
         `▸ \`${prefix}${command} off\` — Desactivar`

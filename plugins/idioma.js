@@ -1,7 +1,7 @@
 'use strict';
 
 // ╔══════════════════════════════════════════════════════════════════════╗
-// ║        🌸 KANZANBOT v2 — PLUGIN: IDIOMA (personal + grupo) 🌸       ║
+// ║        💨 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵 v2 — PLUGIN: IDIOMA (personal + grupo) 💨       ║
 // ╚══════════════════════════════════════════════════════════════════════╝
 
 const { SUPPORTED } = require('../lib/i18n');

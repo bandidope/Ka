@@ -1,7 +1,7 @@
 'use strict';
 
 // ╔══════════════════════════════════════════════════════════════════════╗
-// ║               🌸 KANZANBOT v2 — PLUGIN: MENÚ 🌸                    ║
+// ║               💨 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵 v2 — PLUGIN: MENÚ 💨                    ║
 // ╚══════════════════════════════════════════════════════════════════════╝
 
 const fs     = require('fs');
@@ -14,7 +14,7 @@ const CATEGORY_META = {
   serbot     : { emoji: '🤖', label: 'Sub-Bots',    order: 3 },
   utilidades : { emoji: '🛠️', label: 'Utilidades',  order: 4 },
   premium    : { emoji: '💎', label: 'Premium',      order: 5 },
-  general    : { emoji: '🌸', label: 'General',      order: 6 },
+  general    : { emoji: '💨', label: 'General',      order: 6 },
   info       : { emoji: 'ℹ️', label: 'Info',         order: 7 },
 };
 
@@ -46,7 +46,7 @@ async function buildMenuText(ctx) {
 
   // ── Encabezado ──────────────────────────────────────────────────
   let menu =
-    `🌸 *${config.botName}*  _v${config.botVersion}_\n` +
+    `💨 *${config.botName}*  _v${config.botVersion}_\n` +
     `👤 ${ctx.pushName || ''}  ·  📅 ${now}\n` +
     `⌨️ Prefijos: *${pfxStr}*\n\n`;
 

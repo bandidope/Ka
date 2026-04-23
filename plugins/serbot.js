@@ -1,7 +1,7 @@
 'use strict';
 
 // ╔══════════════════════════════════════════════════════════════════════╗
-// ║            🌸 KANZANBOT v2 — PLUGIN: SERBOT / JADIBOT 🌸            ║
+// ║            💨 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵 v2 — PLUGIN: SERBOT / JADIBOT 💨            ║
 // ║  Sistema completo de Sub-Bots                                        ║
 // ╚══════════════════════════════════════════════════════════════════════╝
 
@@ -58,7 +58,7 @@ function removeSubDir(phone) {
 async function startSubbot(parentSock, chatJid, quotedMsg, phone, opts = {}) {
   const db        = require('../lib/database');
   const lang      = opts.lang    || 'es';
-  const botName   = opts.botName || 'KanzanSubBot 🌸';
+  const botName   = opts.botName || 'KanzanSubBot 💨';
   const ownerId   = opts.ownerId || '';
   const useCode   = opts.useCode || false;
   const MAX_RECONNECTS = 3;
@@ -76,7 +76,7 @@ async function startSubbot(parentSock, chatJid, quotedMsg, phone, opts = {}) {
     auth                  : state,
     logger                : pino({ level: 'silent' }),
     printQRInTerminal     : false,
-    browser               : ['KanzanBot Sub', 'Chrome', '121.0.0'],
+    browser               : ['𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵 Sub', 'Chrome', '121.0.0'],
     connectTimeoutMs      : 60_000,
     keepAliveIntervalMs   : 25_000,
     defaultQueryTimeoutMs : undefined,
@@ -293,7 +293,7 @@ module.exports = {
       if (activeSubs.has(targetPhone)) { await stopSubbot(targetPhone); await sleep(1500); }
 
       await startSubbot(sock, remoteJid, msg, targetPhone, {
-        useCode: false, botName: 'KanzanSubBot 🌸', ownerId: sender, lang,
+        useCode: false, botName: 'KanzanSubBot 💨', ownerId: sender, lang,
       });
       return;
     }
@@ -305,7 +305,7 @@ module.exports = {
 
       let text =
         `╔═══════════════════════════╗\n` +
-        `║  *🌸 Sub-Bots Activos*    ║\n` +
+        `║  *💨 Sub-Bots Activos*    ║\n` +
         `╚═══════════════════════════╝\n\n`;
 
       list.forEach((s, i) => {
@@ -351,7 +351,7 @@ module.exports = {
       const subCfg  = getSubConfig(target);
       const useCode = args.includes('--code');
       await startSubbot(sock, remoteJid, msg, target, {
-        useCode, botName: subCfg.name || 'KanzanSubBot 🌸', ownerId: sender, lang,
+        useCode, botName: subCfg.name || 'KanzanSubBot 💨', ownerId: sender, lang,
       });
       return;
     }
@@ -379,7 +379,7 @@ module.exports = {
       }
       if (activeSubs.has(targetPhone)) { await stopSubbot(targetPhone); await sleep(1500); }
       await startSubbot(sock, remoteJid, msg, targetPhone, {
-        useCode: true, botName: 'KanzanSubBot 🌸', ownerId: sender, lang,
+        useCode: true, botName: 'KanzanSubBot 💨', ownerId: sender, lang,
       });
       return;
     }
@@ -395,7 +395,7 @@ module.exports = {
       }
       const useCode = args.includes('--code');
       const nameArg = args.find(a => a.startsWith('--name='));
-      const botName = nameArg ? nameArg.replace('--name=', '') : 'KanzanSubBot 🌸';
+      const botName = nameArg ? nameArg.replace('--name=', '') : 'KanzanSubBot 💨';
       if (activeSubs.has(explicitPhone)) { await stopSubbot(explicitPhone); await sleep(1500); }
       await startSubbot(sock, remoteJid, msg, explicitPhone, {
         useCode, botName, ownerId: sender, lang,
@@ -405,7 +405,7 @@ module.exports = {
 
     // ── Comando no reconocido → mostrar ayuda ─────────────────────
     return reply(
-      `*[🤖] Sistema de Sub-Bots — KanzanBot*\n\n` +
+      `*[🤖] Sistema de Sub-Bots — 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵*\n\n` +
       `*Comandos:*\n` +
       `▸ \`!serbot\` — Crear con tu número (QR)\n` +
       `▸ \`!serbot --code\` — Crear con código de emparejamiento\n` +

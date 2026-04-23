@@ -54,7 +54,7 @@ module.exports = {
 
       // ── Helpers de envío ──────────────────────────────────────────
       reply,          // reply(texto) → responde citando el mensaje
-      react,          // react('🌸') → reacciona con emoji al mensaje
+      react,          // react('💨') → reacciona con emoji al mensaje
       send,           // send(content) → envía sin citar
       sendDM,         // sendDM(jid, content) → envía mensaje privado
     } = ctx;
@@ -64,7 +64,7 @@ module.exports = {
     // ── 1. Respuesta de texto simple ─────────────────────────────
     if (command === 'ejemplo') {
       const saludo = await tr('success'); // clave de es.json
-      return reply(`*[🌸] Hola ${pushName}!*\n\n${saludo}`);
+      return reply(`*[💨] Hola ${pushName}!*\n\n${saludo}`);
     }
 
     // ── 2. Texto con mención ──────────────────────────────────────
@@ -75,7 +75,7 @@ module.exports = {
 
     // ── 3. Imagen desde URL ───────────────────────────────────────
     if (command === 'test' && args[0] === 'imagen') {
-      return sock.sendMessage(remoteJid, { image  : { url: 'https://picsum.photos/800/600' }, caption: `*[📷] Imagen de ejemplo*\n_Enviada por KanzanBot 🌸_` }, { quoted: msg });
+      return sock.sendMessage(remoteJid, { image  : { url: 'https://picsum.photos/800/600' }, caption: `*[📷] Imagen de ejemplo*\n_Enviada por 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵 💨_` }, { quoted: msg });
     }
 
     // ── 4. Imagen desde archivo local (en src/) ───────────────────
@@ -110,7 +110,7 @@ module.exports = {
     if (command === 'test' && args[0] === 'botones') {
       return sock.sendMessage(remoteJid, {
         text: '*[🔘] Elige una opción:*',
-        footer: '_KanzanBot 🌸_',
+        footer: '_𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵 💨_',
         buttons: [
           { buttonId: 'opcion_1', buttonText: { displayText: '✅ Opción 1' }, type: 1 },
           { buttonId: 'opcion_2', buttonText: { displayText: '❌ Opción 2' }, type: 1 },
@@ -133,7 +133,7 @@ module.exports = {
     if (command === 'test' && args[0] === 'traducir') {
       const { translateText } = require('../lib/translate');
       const destLang = args[1] || 'en';
-      const textoBase = args.slice(2).join(' ') || '¡Hola desde KanzanBot!';
+      const textoBase = args.slice(2).join(' ') || '¡Hola desde 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵!';
 
       await react('🌐');
       try {
@@ -170,7 +170,7 @@ module.exports = {
 
     // ── Si no hay subcomando, mostrar ayuda ───────────────────────
     return reply(
-      `*[🌸] Plugin de Ejemplo*\n\n` +
+      `*[💨] Plugin de Ejemplo*\n\n` +
       `Subcomandos disponibles:\n` +
       `▸ \`!test imagen\`   — Imagen desde URL\n` +
       `▸ \`!test local\`    — Imagen local (src/)\n` +

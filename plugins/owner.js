@@ -1,7 +1,7 @@
 'use strict';
 
 // ╔══════════════════════════════════════════════════════════════════════╗
-// ║           🌸 KANZANBOT v2 — PLUGIN: OWNER COMMANDS 🌸               ║
+// ║           💨 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵 v2 — PLUGIN: OWNER COMMANDS 💨               ║
 // ╚══════════════════════════════════════════════════════════════════════╝
 
 // reloadPlugins se requiere de forma lazy (dentro del comando) para evitar
@@ -27,7 +27,7 @@ module.exports = {
 
       return reply(
         `╔══════════════════════════════╗\n` +
-        `║  *🌸 ${config.botName}*\n` +
+        `║  *💨 ${config.botName}*\n` +
         `║  *v${config.botVersion}*\n` +
         `╚══════════════════════════════╝\n\n` +
         `*[📊] Estadísticas*\n` +

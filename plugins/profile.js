@@ -1,7 +1,7 @@
 'use strict';
 
 // ╔══════════════════════════════════════════════════════════════════════╗
-// ║             🌸 KANZANBOT v2 — PLUGIN: PERFIL DE USUARIO 🌸          ║
+// ║             💨 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵 v2 — PLUGIN: PERFIL DE USUARIO 💨          ║
 // ║  Registro de nombre, idioma preferido y estadísticas del usuario     ║
 // ╚══════════════════════════════════════════════════════════════════════╝
 
