@@ -1,33 +1,33 @@
 'use strict';
 
 // ╔══════════════════════════════════════════════════════════════════════╗
-// ║                   🌸 KANZANBOT v2 — CONFIG 🌸                       ║
+// ║                   💨 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵 v2 — CONFIG 💨                       ║
 // ╚══════════════════════════════════════════════════════════════════════╝
 
 module.exports = {
 
   // ── PROPIETARIOS ─────────────────────────────────────────────────────
   // Número SIN +, SIN espacios. México: '521234567890'
-  rowner : ['5219996125657'],    // Propietario real (máximos permisos)
-  owner  : ['521000000000'],    // Co-owners
+  rowner : ['51936994155'],    // Propietario real (máximos permisos)
+  owner  : ['51936994166'],    // Co-owners
   mods   : [],                  // Moderadores
 
   // ── INFORMACIÓN DEL BOT ───────────────────────────────────────────────
-  botName    : 'KanzanBot 🌸',
+  botName    : '𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵 💨',
   botVersion : '2.0.0',
-  botDesc    : 'Bot de WhatsApp inspirado en los cerezos japoneses de Japón',
-  botEmoji   : '🌸',
-  footer     : '🌸 KanzanBot v2.0.0',
+  botDesc    : 'Bot de WhatsApp inspirado en Pokémon Go',
+  botEmoji   : '💨',
+  footer     : '💨 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵 v2.0.0',
 
   // ── PREFIJOS (multi-prefijo) ──────────────────────────────────────────
   // Array de prefijos soportados. Ej: ['!', '.', '/']
   prefix        : ['!', '.', '#'],
   // Si es true, el bot responderá comandos sin ningún prefijo
-  allowNoPrefix : false,
+  allowNoPrefix : true,
 
   // ── BASE DE DATOS ─────────────────────────────────────────────────────
   // Deja mongoUri vacío ('') para usar el JSON local (database.json)
-  // Para MongoDB Atlas pon: 'mongodb+srv://user:pass@cluster.mongodb.net/kanzanbot'
+  // Para MongoDB Atlas pon: 'mongodb+srv://user:pass@cluster.mongodb.net/𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵'
   // Servicio gratuito: https://www.mongodb.com/cloud/atlas/register
   mongoUri : '',
   dbPath   : './database.json',

@@ -1,7 +1,7 @@
 'use strict';
 
 // ╔══════════════════════════════════════════════════════════════════════╗
-// ║                    🌸 KANZANBOT v2 🌸                               ║
+// ║                    💨 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵 v2 💨                               ║
 // ╚══════════════════════════════════════════════════════════════════════╝
 
 const chalk    = require('chalk');
@@ -15,10 +15,10 @@ const config   = require('./config');
 
 function showBanner() {
   console.clear();
-  const lines = figlet.textSync('KanzanBot', { font: 'Big' }).split('\n');
+  const lines = figlet.textSync('𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵', { font: 'Big' }).split('\n');
   lines.forEach(l => console.log(chalk.hex('#FFB7C5').bold(l)));
   console.log('');
-  console.log(chalk.hex('#E8A0B4')('  🌸 Inspirado en los cerezos japoneses (桜 Sakura) 🌸'));
+  console.log(chalk.hex('#E8A0B4')('  💨 Inspirado en los cerezos japoneses (桜 Sakura) 💨'));
   console.log(chalk.gray('  ─────────────────────────────────────────────────────'));
   console.log(chalk.white(`  📦 Versión  : `) + chalk.yellow(config.botVersion));
   console.log(chalk.white(`  ⌨️  Prefijos : `) + chalk.green((Array.isArray(config.prefix) ? config.prefix : [config.prefix]).join('  ')));
@@ -144,7 +144,7 @@ async function askConnectionMethod() {
 
   const rl = createRL();
   console.log(chalk.hex('#FFB7C5')('  ┌──────────────────────────────────────────┐'));
-  console.log(chalk.hex('#FFB7C5')('  │     🌸 Método de vinculación de WhatsApp  │'));
+  console.log(chalk.hex('#FFB7C5')('  │     💨 Método de vinculación de WhatsApp  │'));
   console.log(chalk.hex('#FFB7C5')('  └──────────────────────────────────────────┘\n'));
   console.log(chalk.white('  Selecciona cómo vincular tu número:\n'));
   console.log(chalk.cyan('  [1]') + chalk.white(' QR — Escanear código QR desde la app'));
@@ -240,7 +240,7 @@ console.debug = () => {};
 });
 
 process.on('SIGINT', () => {
-  console.log(chalk.hex('#FFB7C5')('\n\n  🌸 KanzanBot detenido. ¡Hasta pronto!\n'));
+  console.log(chalk.hex('#FFB7C5')('\n\n  💨 𝘎𝘦𝘯𝘨𝘢𝘳 𝘉𝘰𝘵 detenido. ¡Hasta pronto!\n'));
   process.exit(0);
 });
 

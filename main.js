@@ -1,7 +1,7 @@
 'use strict';
 
 // ╔══════════════════════════════════════════════════════════════════════╗
-// ║              🌸 KANZANBOT v2 — MAIN / CONEXIÓN 🌸                   ║
+// ║              💨 KANZANBOT v2 — MAIN / CONEXIÓN 💨                   ║
 // ╚══════════════════════════════════════════════════════════════════════╝
 
 const {
@@ -102,7 +102,7 @@ async function startBot(opts = {}) {
           : codeStr || '???? ????';
 
         console.log(chalk.hex('#FFB7C5')('\n  ┌──────────────────────────────────────┐'));
-        console.log(chalk.hex('#FFB7C5')('  │       🌸 Código de Emparejamiento      │'));
+        console.log(chalk.hex('#FFB7C5')('  │       💨 Código de Emparejamiento      │'));
         console.log(chalk.hex('#FFB7C5')('  └──────────────────────────────────────┘\n'));
         console.log(chalk.white('  Ingresa este código en WhatsApp:\n'));
         console.log(chalk.bgHex('#FFB7C5').black.bold(`         ${formatted}         `));
@@ -143,7 +143,7 @@ async function startBot(opts = {}) {
     const { connection, lastDisconnect, qr } = update;
 
     if (qr && !useCode) {
-      console.log(chalk.hex('#FFB7C5')('\n  🌸 Escanea el QR con WhatsApp:\n'));
+      console.log(chalk.hex('#FFB7C5')('\n  💨 Escanea el QR con WhatsApp:\n'));
       qrcode.generate(qr, { small: true });
       console.log(chalk.gray('  Ruta: WhatsApp → Dispositivos vinculados → Vincular dispositivo\n'));
     }
@@ -177,7 +177,7 @@ async function startBot(opts = {}) {
       const num    = jidNormalizedUser(sock.user.id).split('@')[0];
       const botNum = num.split(':')[0];
       console.log(chalk.green('\n  ✅ ¡Conexión exitosa!'));
-      console.log(chalk.hex('#FFB7C5')(`  🌸 ${config.botName} → +${botNum}\n`));
+      console.log(chalk.hex('#FFB7C5')(`  💨 ${config.botName} → +${botNum}\n`));
 
       if (!config.owner.includes(botNum)) {
         config.owner.push(botNum);
